@@ -1,0 +1,1205 @@
+/* --- Styles Généraux --- */
+* {
+    margin: 0; /* Supprime les marges par défaut du navigateur */
+    padding: 0; /* Supprime les espacements internes par défaut */
+    box-sizing: border-box; /* Aide à calculer correctement la taille des éléments */
+    font-family: 'Segoe UI', sans-serif; /* Définit la police d'écriture */
+}
+
+/* --- Barre de Navigation --- */
+header {
+    background-color: #ffffff; /* Couleur de fond blanche */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Ajoute une ombre légère sous le menu */
+    padding: 1rem 5%; /* Espace de 1rem en haut/bas et 5% sur les côtés */
+    position: fixed; /* Le menu reste fixé en haut de l'écran lors du défilement */
+    width: 100%; /* Le menu prend toute la largeur */
+    top: 0; /* Colle le menu tout en haut */
+    z-index: 1000; /* Garde le menu au-dessus de tout le reste du contenu */
+}
+
+.navbar {
+    display: flex; /* Active Flexbox pour aligner logo et menu sur la même ligne */
+    justify-content: space-between; /* Place le logo à gauche et le menu à droite */
+    align-items: center; /* Aligne verticalement le logo et le menu */
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    background-color: #ffd4ea; /* Ton rose */
+    padding: 80px 10%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;     /* centre verticalement */
+    text-align: center;
+}
+
+/* Texte à gauche */
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: #272626;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: #272626;
+    margin-bottom: 30px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+/* Image à droite avec grosse bordure */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- RESPONSIVE (Pour mobile) --- */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse; /* Image au dessus du texte sur mobile */
+        text-align: center;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .hero-btns {
+        justify-content: center;
+    }
+}
+
+/* --- Le Logo SB --- */
+.logo {
+    width: 50px; /* Largeur du cercle */
+    height: 50px; /* Hauteur du cercle */
+    border: 2px solid #333; /* Bordure noire de 2px */
+    border-radius: 50%; /* Arrondi à 50% pour créer un cercle parfait */
+    display: flex; /* Utilise Flexbox pour centrer le texte SB */
+    justify-content: center; /* Centre SB horizontalement */
+    align-items: center; /* Centre SB verticalement */
+    font-weight: bold; /* Met les lettres en gras */
+    transition: 0.3s; /* Durée de l'animation lors du survol */
+}
+
+.logo:hover {
+    background-color: #2b272a; /* Le fond devient noir au survol */
+    color: #fff; /* Le texte devient blanc au survol */
+}
+
+/* --- Menu de navigation (Liens) --- */
+.nav-links {
+    display: flex; /* Aligne les liens horizontalement */
+    list-style: none; /* Supprime les points de la liste */
+    gap: 35px; /* Espace de 20px entre chaque lien */
+}
+
+.nav-links a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: #333; /* Couleur de texte gris foncé */
+    font-weight: 500; /* Épaisseur moyenne du texte */
+    transition: color 0.3s; /* Animation douce pour le changement de couleur */
+}
+
+.nav-links a:hover {
+    color: #fbaaec; /* Les liens deviennent rose au survol */
+}
+
+/* --- Bouton Contact Spécial --- */
+.btn-contact {
+    background-color: #fbaaec; /* Fond rose */
+    color: white !important; /* Texte forcé en blanc */
+    padding: 8px 15px; /* Espace interne pour créer la forme de bouton */
+    border-radius: 5px; /* Coins légèrement arrondis */
+}
+
+/* --- Section de Bienvenue (Hero) --- */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* MODIFICATIONS ICI POUR L'ANIMATION DE FOND */
+    background: linear-gradient(135deg, #ffffff, #fcf5fb, #fbd0f9, #faf5fa); /* Plusieurs couleurs pour le dégradé */
+    background-size: 400% 400%; /* Permet au dégradé d'être plus grand que la section */
+    animation: gradientAnimation 5s ease infinite; /* Nom, durée, type et répétition de l'animation */
+}
+
+/* --- DÉFINITION DE L'ANIMATION --- */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Position de départ du dégradé */
+    }
+    50% {
+        background-position: 100% 50%; /* Position à mi-chemin */
+    }
+    100% {
+        background-position: 0% 50%; /* Retour à la position de départ pour une boucle infinie */
+    }
+}
+
+/* Ajoute ce bloc : il gère uniquement la TAILLE du gros titre */
+.hero-section h1 {
+    font-size: 3rem;      /* Ici on agrandit l'écriture */
+    font-weight: 600;     /* Épaisseur */
+
+}
+
+/* Ajoute ce bloc : il gère uniquement la TAILLE du petit texte */
+.hero-section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* --- COMPORTEMENT DE DÉFILEMENT --- */
+html {
+    scroll-behavior: smooth; /* Permet un défilement doux quand on clique sur le menu */
+}
+
+/* --- STYLE DES SECTIONS DE CONTENU --- */
+.content-section {
+    padding: 100px 10%; /* Espace en haut/bas (100px) et sur les côtés */
+    min-height: 80vh;   /* Chaque section prend presque toute la hauteur de l'écran */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* On alterne les couleurs de fond pour bien distinguer les sections au défilement */
+.alt-bg {
+    background-color: #f9f9f9; /* Un gris très léger pour une section sur deux */
+}
+
+h2 {
+    padding: 40px 10%;
+    font-size: 2.5rem;
+    color: #343233; /* Titres de section en rose */
+}
+
+/* --- SECTION A PROPOS --- */
+
+/* Conteneur principal (Flexbox pour mettre texte et carte côte à côte) */
+.about-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer l'un sous l'autre sur mobile */
+    gap: 50px;
+    padding: 10px 10%;
+    align-items: flex-start;
+}
+
+/* Partie texte */
+.about-text {
+    flex: 1; /* Prend l'espace disponible */
+    min-width: 300px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8; /* Espace entre les lignes pour la lisibilité */
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.about-text strong {
+    color: #494848; /* Met en gras en rose */
+}
+
+/* Bouton CV */
+.btn-cv {
+    display: inline-block;
+    background-color: #f9a8d4;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+    margin-top: 10px;
+    /* CETTE LIGNE AJOUTE DE L'ESPACE EN DESSOUS (utile sur mobile) */
+    margin-bottom: 20px;
+}
+
+.btn-cv:hover {
+    background-color: #f9a8d4;
+    transform: scale(1.05); /* Effet de grossissement au survol */
+}
+
+/* Partie Carte */
+.about-map {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-map h3 {
+    color: #f9a8d4;
+    margin-bottom: 15px;
+}
+
+.about-map iframe {
+    border-radius: 15px; /* Arrondi les bords de la carte */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Petite ombre */
+}
+
+/* --- LIGNE DE SÉPARATION (DIVIDER) --- */
+
+.section-divider {
+    height: 2px;
+    width: 100%;
+    background-color: #fce7f3; 
+    margin: 50px 0;
+}
+
+/* --- SECTION BTS SIO --- */
+
+/* La section parente définit l'écart avec le bord de l'écran (ex: 10%) */
+.alt-bg {
+    background-color: #ffffff; 
+    padding: 80px 10%; /* C'est ici qu'on règle l'alignement de TOUT le bloc */
+}
+
+/* Le conteneur ne doit pas avoir de marges automatiques ni de limites de largeur étroites */
+.parcours-container {
+    width: 100%;
+    margin: 0;         /* Supprime le centrage pour coller à gauche */
+    margin-top: 0%;
+    text-align: left;
+}
+
+/* --- Style du titre (parfaitement aligné) --- */
+.about-header-left {
+    padding: 0;        /* Supprime les paddings internes pour ne pas décaler le titre */
+    margin: 0 0 30px 0; /* Marge seulement en bas pour l'aérer */
+    text-align: left;
+}
+
+.about-header-left h2 {
+    font-size: 2.5rem;
+    color: #3e3e3e;   /* Ton rose clair */
+    margin: 0;        /* Supprime les marges par défaut du h2 */
+    padding: 0;       /* Supprime les paddings par défaut du h2 */
+    font-weight: bold;
+}
+
+/* --- Le texte d'intro (plus aéré et aligné) --- */
+.bts-intro {
+    padding: 0;        /* Supprime le padding pour être aligné sur le h2 */
+    margin: 0 0 50px 0; /* Marge en bas avant les cartes */
+}
+
+.bts-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;   /* Espace entre les lignes pour l'aération */
+    margin-bottom: 25px; /* Espace entre les paragraphes */
+    margin-left: 0;     /* Force l'alignement à gauche toute */
+    color: #444;
+}
+
+/* --- LES CARTES (Inchangées comme demandé) --- */
+.specialites-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Aligne le début des cartes à gauche */
+}
+
+/* Conteneur Flex pour aligner les deux cartes (SLAM et SISR) */
+.specialites-container {
+    display: flex;             /* Active le mode Flexbox */
+    gap: 30px;                 /* Espace de 30px entre les deux cartes */
+    margin-top: 80px;          /* Marge au-dessus du bloc de cartes */
+    flex-wrap: wrap;           /* Permet aux cartes de passer l'une sous l'autre sur mobile */
+}
+
+/* Style commun aux cartes de spécialités */
+.spec-card {
+    flex: 1;                   /* Les cartes occupent le même espace disponible */
+    min-width: 320px;          /* Taille minimale avant de passer à la ligne (mobile) */
+    background: white;         /* Fond de carte blanc */
+    padding: 10px 20px;        /* Espace à l'intérieur de la carte */
+    border-radius: 20px;       /* Arrondit les coins des cartes */
+    border: 1px solid #fce7f3; /* Bordure fine rose très clair */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Ombre légère et discrète */
+    position: relative;        /* Nécessaire pour positionner le badge rose à l'intérieur */
+    transition: 0.3s;          /* Durée de l'animation lors du survol (hover) */
+}
+
+/* Style spécifique pour ta spécialité (SLAM) pour la faire ressortir */
+.active-spec {
+    border: 2px solid #fe8fcc; /* Bordure plus épaisse et plus foncée */
+    box-shadow: 0 15px 35px rgba(219, 39, 119, 0.1); /* Ombre teintée de rose */
+}
+
+/* Petit badge "Ma Spécialité" au-dessus de la carte SLAM */
+.spec-badge {
+    position: absolute;        /* Positionnement libre dans la carte */
+    top: -15px;                /* Sort de 15px par le haut */
+    left: 20px;                /* Aligné à 20px de la gauche */
+    background: #f9a8d4;       /* Fond rose vif */
+    color: white;              /* Texte blanc */
+    padding: 5px 15px;         /* Espace interne du badge */
+    border-radius: 20px;       /* Bords arrondis pour le badge */
+    font-size: 0.8rem;         /* Taille de texte réduite */
+    font-weight: bold;         /* Texte en gras */
+}
+
+/* Style du titre de la spécialité (h3) */
+.spec-card h3 {
+    color: #fe8fcc;            /* Couleur rose bordeaux */
+    font-size: 1.6rem;         /* Taille du titre */
+    margin-bottom: 5px;        /* Espace réduit avec le sous-titre */
+}
+
+/* Style du texte descriptif (le nom complet en majuscules) */
+.spec-subtitle {
+    font-weight: bold;         /* Texte en gras */
+    color: #f9a8d4;            /* Couleur rose vif */
+    font-size: 0.9rem;         /* Texte un peu plus petit */
+    margin-bottom: 20px;       /* Espace avant le paragraphe */
+    text-transform: uppercase; /* Met le texte en majuscules */
+}
+
+/* Séparateur au-dessus de la liste des métiers */
+.debouchés {
+    margin-top: 25px;          /* Espace avec le paragraphe du haut */
+    padding-top: 20px;         /* Espace au-dessus de la bordure */
+    border-top: 1px solid #eee; /* Ligne de séparation grise très claire */
+}
+
+/* Titre "Métiers visés" */
+.debouchés h4 {
+    color: #333;               /* Couleur presque noire */
+    margin-bottom: 10px;       /* Espace avec la liste */
+    font-size: 1rem;           /* Taille standard */
+}
+
+/* Style de la liste à puces des métiers */
+.debouchés ul {
+    list-style: none;          /* Supprime les puces par défaut de la liste */
+    display: grid;             /* Utilise une grille pour les éléments */
+    grid-template-columns: 1fr;/* Une seule colonne par ligne */
+    gap: 8px;                  /* Espace de 8px entre chaque métier */
+}
+
+/* Style de chaque métier dans la liste */
+.debouchés li {
+    font-size: 0.9rem;         /* Taille de texte adaptée */
+    color: #666;               /* Gris intermédiaire */
+    padding-left: 25px;        /* Espace à gauche pour laisser la place à l'icône */
+    position: relative;        /* Nécessaire pour placer l'icône fleur */
+}
+
+/* Ajout de la petite fleur devant chaque métier */
+.debouchés li::before {
+    content: "🌸";             /* Contenu ajouté (émoji fleur) */
+    position: absolute;        /* Positionnement fixe à gauche du texte */
+    left: 0;                   /* Collé à gauche */
+    font-size: 0.8rem;         /* Taille de la fleur */
+}
+
+/* ============================================================
+   SECTION PARCOURS SCOLAIRE (TIMELINE)
+   ============================================================ */
+
+/* Conteneur global de la section */
+#parcours {
+    background-color: #ffffff; /* Fond blanc pur */
+    padding: 10px 170px;           /* 60px d'espace en haut/bas, 0 sur les côtés pour coller au bord */
+    width: 100%;               /* Utilise toute la largeur de l'écran */
+}
+
+/* --- TITRE DE LA SECTION --- */
+.parcours-header {
+    width: 100%;               /* Prend toute la largeur */
+    text-align: left;          /* Aligne le texte à gauche */
+    padding: 0;                /* SUPPRIME TOUT PADDING : Titre collé au bord gauche */
+    margin-bottom: 10px;       /* Espace avant de commencer la timeline */
+}
+
+.parcours-header h2 {
+    color: #3e3e3e;            /* Rose clair (ton thème) */
+    font-size: 2.5rem;         /* Grande taille identique aux autres titres */
+    font-weight: bold;         /* Texte en gras */
+    margin: 0;                 /* Supprime les marges par défaut du navigateur */
+    padding-left: 0;           /* Assure qu'il n'y a aucun espace à gauche */
+    text-transform: none;      /* Garde la casse normale */
+}
+
+/* Ligne fine sous le titre qui traverse tout l'écran */
+.divider-line {
+    height: 1px;               /* Épaisseur de la ligne */
+    background-color: #f9a8d4; /* Couleur rose clair */
+    width: 100%;               /* S'étend sur toute la largeur de la page */
+    margin-top: 10px;          /* Petit espace sous le texte du titre */
+}
+
+/* --- CONTENEUR DES CARTES (TIMELINE) --- */
+.timeline {
+    display: flex;             /* Active Flexbox */
+    flex-direction: column;    /* Aligne les cartes verticalement */
+    align-items: flex-start;   /* Aligne les cartes au début (à gauche) */
+    padding-left: 20px;        /* Petit décalage de 20px pour que les cartes ne touchent pas l'écran */
+    margin-top: 30px;          /* Espace après la ligne de séparation */
+}
+
+/* --- STYLE DES CARTES --- */
+.timeline-card {
+    background: white;               /* Fond blanc de la carte */
+    border: 2px solid #f9a8d4;       /* Bordure rose clair structurée */
+    border-radius: 12px;             /* Coins arrondis */
+    padding: 25px;                   /* Espace intérieur pour le texte */
+    width: 90%;                      /* Largeur adaptative */
+    max-width: 800px;                /* Largeur maximale pour le confort visuel */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); /* Ombre très légère */
+    transition: transform 0.3s ease; /* Animation fluide au survol */
+    position: relative;              /* Pour positionner les éléments internes */
+}
+
+/* Animation au survol d'une carte */
+.timeline-card:hover {
+    transform: translateY(-5px);     /* La carte s'élève légèrement */
+    box-shadow: 0 12px 25px rgba(249, 168, 212, 0.2); /* Ombre rosée au survol */
+}
+
+/* Badge "Formation Actuelle" */
+.badge {
+    background-color: #f9a8d4;       /* Fond rose clair */
+    color: white;                    /* Texte blanc */
+    padding: 5px 12px;               /* Taille du badge */
+    border-radius: 6px;              /* Coins arrondis */
+    font-size: 0.8rem;               /* Petit texte */
+    font-weight: bold;               /* Gras */
+    margin-right: 15px;              /* Espace avec le titre H3 */
+    display: inline-block;           /* Permet de gérer les marges */
+}
+
+/* Titre du diplôme dans la carte */
+.card-header h3 {
+    display: inline-block;           /* Aligne à côté du badge */
+    color: #333;                     /* Gris anthracite */
+    font-size: 1.5rem;               /* Taille du texte */
+    margin-top: 10px;                /* Espace au-dessus */
+}
+
+/* Bloc des détails (Lieu, Dates) */
+.card-details p {
+    color: #555;                     /* Gris moyen */
+    margin: 8px 0;                   /* Espace entre les lignes */
+    font-size: 0.95rem;              /* Taille standard */
+}
+
+/* Liens vers l'établissement */
+.card-details a {
+    color: #db9d39;                  /* Couleur dorée (comme ton modèle) */
+    text-decoration: underline;      /* Texte souligné */
+    font-weight: 500;                /* Un peu plus épais */
+}
+
+/* Description textuelle */
+.card-text {
+    margin: 20px 0;                  /* Espace aéré */
+    line-height: 1.7;                /* Hauteur de ligne pour la lisibilité */
+    color: #444;                     /* Gris texte standard */
+}
+
+/* --- BOUTON LOCALISATION (Style sombre contrasté) --- */
+.btn-location {
+    display: inline-flex;            /* Aligne l'icône et le texte */
+    align-items: center;             /* Centre verticalement */
+    background-color: #f9a8d4;       /* Marron/Rouge foncé de ton image */
+    color: white;                    /* Texte blanc */
+    text-decoration: none;           /* Pas de soulignement */
+    padding: 12px 25px;              /* Taille généreuse du bouton */
+    border-radius: 8px;              /* Coins arrondis */
+    font-weight: bold;               /* Gras */
+    font-size: 0.85rem;              /* Taille du texte */
+    margin-top: 10px;                /* Espace au-dessus */
+    transition: 0.3s;                /* Animation de couleur */
+}
+
+.btn-location:hover {
+    background-color: #f9a8d4;       /* Devient rose foncé au survol */
+}
+
+/* --- LIGNES DE LIAISON (Pointillés) --- */
+.timeline-dot-line {
+    height: 50px;                    /* Hauteur de la ligne de liaison */
+    border-left: 3px dotted #f9a8d4; /* Pointillés rose clair */
+    margin-left: 60px;               /* Aligne les pointillés sous le logo/badge */
+    margin-top: 5px;                 /* Petit espace haut */
+    margin-bottom: 5px;              /* Petit espace bas */
+}
+
+/* --- ADAPTATION MOBILE --- */
+@media (max-width: 768px) {
+    .parcours-header h2 {
+        font-size: 1.8rem;           /* Titre plus petit sur téléphone */
+    }
+    .timeline {
+        padding-left: 10px;          /* Moins de marge sur les côtés */
+    }
+    .timeline-dot-line {
+        margin-left: 30px;           /* Recentre les pointillés sur mobile */
+    }
+}
+
+/* --- SECTION COMPÉTENCES --- */
+
+#competences {
+    padding: 60px 0;             /* Espace haut/bas, 0 sur les côtés */
+    background-color: #ffffff;   /* Fond sombre comme sur ton image */
+    color: white;                /* Texte en blanc pour le contraste */
+}
+
+/* Titre "Mes compétences" collé tout à gauche */
+.competences-header {
+    width: 100%;
+    text-align: left;
+    padding: 0;                  /* Supprime tout espace à gauche */
+}
+
+.competences-header h2 {
+    color: #373637;              /* Rose clair */
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 50;             /* Vraiment tout à gauche */
+}
+
+/* La ligne fine qui traverse tout l'écran */
+.divider-line {
+    height: 1px;               /* Épaisseur de la ligne */
+    background-color: #f9a8d4; /* Ton rose clair */
+    width: 100%;               /* Prend 100% de la largeur du parent */
+    margin-top: 5px;          /* Espace entre le titre et la ligne */
+    margin-left: 300px;
+    display: block;            /* S'assure qu'elle se comporte comme un bloc */
+}
+
+/* Sous-titre "Languages" centré */
+.category-title {
+    text-align: left;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: #f9a8d4;
+}
+
+/* Grille des compétences */
+.skills-grid {
+    display: grid;               /* Utilise le système de grille */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cartes responsives */
+    gap: 25px;                   /* Espace entre les cartes */
+    padding: 0 5%;               /* Marges sur les côtés pour la grille seulement */
+    max-width: 1200px;           /* Largeur max pour ne pas trop étirer */
+    margin: 0 auto;              /* Centre la grille dans la page */
+}
+
+/* Style de chaque carte individuelle */
+.skill-card {
+    background-color: #f9a8d4;   /* carte rose */
+    border-radius: 15px;         /* Coins arrondis */
+    padding: 30px 20px;          /* Espace interne */
+    text-align: center;          /* Centre l'icône et le texte */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation fluide */
+    cursor: pointer;
+}
+
+/* Animation au survol */
+.skill-card:hover {
+    transform: translateY(-10px); /* La carte remonte */
+    box-shadow: 0 10px 20px rgba(249, 168, 212, 0.3); /* Ombre rosée */
+    background-color: #fc8eca;   /* Change vers ton rose foncé */
+}
+
+/* Taille des icônes de langages */
+.skill-card img {
+    width: 60px;                 /* Taille de l'icône */
+    height: 60px;
+    margin-bottom: 15px;         /* Espace avec le texte */
+}
+
+/* Nom du langage sous l'icône */
+.skill-card p {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Adaptation pour mobile */
+@media (max-width: 768px) {
+    .competences-header h2 {
+        font-size: 2rem;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+    }
+}
+
+/* --- AJUSTEMENTS POUR LES CATÉGORIES --- */
+
+/* Ajoute une marge au-dessus des titres de catégories (Languages, Logiciels...) */
+.category-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 60px; /* Espace entre la fin de la grille précédente et le titre suivant */
+    margin-bottom: 40px;
+    color: #fc8eca;
+    font-family: inherit;
+}
+
+/* On s'assure que les images des outils (souvent carrées) restent bien proportionnées */
+.skill-card img {
+    width: 65px; 
+    height: 65px;
+    object-fit: contain; /* Évite de déformer les logos des logiciels */
+    margin-bottom: 15px;
+}
+
+
+/* --- SECTION CERTIFICATION --- */
+
+#certifications {
+    padding-top: 0 !important;
+    margin-top: -10px; /* Rapproche de la section du haut */
+    width: 100%;
+    padding-bottom: 80px;
+}
+
+.certif-header-left {
+    text-align: left !important; /* FORCE L'ALIGNEMENT À GAUCHE */
+    padding-left: 5%; /* Ajuste ce chiffre pour l'aligner pile sur tes autres titres */
+    margin-bottom: 20px;
+}
+
+.certif-header-left h2 {
+    font-size: 2rem; 
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+    white-space: nowrap; /* EMPÊCHE LE RETOUR À LA LIGNE */
+    margin: 0;
+}
+
+/* La ligne fine qui traverse tout l'écran */
+.divider-line {
+    height: 1px;               /* Épaisseur de la ligne */
+    background-color: #f9a8d4; /* Ton rose clair */
+    width: 100%;               /* Prend 100% de la largeur du parent */
+    margin-top: 5px;          /* Espace entre le titre et la ligne */
+    margin-left: 300px;
+    display: block;            /* S'assure qu'elle se comporte comme un bloc */
+}
+
+/* L'IMAGE RESTE CENTRÉE DANS LA PAGE POUR L'ESTHÉTIQUE */
+.certif-container-solo {
+    display: flex;
+    justify-content: center; 
+    padding: 20px 0;
+    width: 100%;
+}
+
+.certif-card-large {
+    position: relative;
+    max-width: 850px; 
+    width: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+.certif-card-large img {
+    width: 100%;
+    display: block;
+}
+
+.certif-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.certif-card-large:hover .certif-overlay {
+    opacity: 1;
+}
+
+.certif-details-centered {
+    text-align: center; /* CENTRE LE TEXTE AU MILIEU */
+    margin-top: 25px;   /* Espace entre l'image et le texte */
+    width: 100%;
+}
+
+.certif-details-centered h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.certif-details-centered p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+}
+
+/* ============================================================
+   SECTION MES STAGES
+   ============================================================ */
+
+/* Conteneur principal de la section */
+#stages {
+    background-color: #ffdcee; /* Fond rose uniforme */
+    color: rgb(30, 29, 29);              /* Couleur du texte par défaut (Cowigo, dates, etc.) */
+    padding: 10px 0;           /* Espacement interne haut/bas */
+    width: 100%;               /* Prend toute la largeur de l'écran */
+}
+
+/* --- EN-TÊTE (Titre + Ligne) --- */
+
+.stages-header {
+    width: 100%;               /* S'assure que le header occupe toute la largeur */
+    text-align: left;          /* Aligne le texte du titre à gauche */
+    margin-bottom: 10px;       /* Espace sous la ligne avant le contenu */
+}
+
+.stages-header h2 {
+    color: #292828;            /* Couleur blanche pour le titre */
+    font-size: 2.5rem;         /* Taille de police identique aux autres sections */
+    margin: 0;                 /* Supprime les marges par défaut du H2 */
+    padding-left: 200px;        /* Petit décalage pour ne pas coller au bord de l'écran */
+    display: flex;             /* Active flexbox pour aligner l'icône et le texte */
+    align-items: center;       /* Centre l'icône verticalement par rapport au texte */
+    gap: 15px;                 /* Espace entre le texte "Mes stages" et l'icône chapeau */
+}
+
+/* La ligne fine blanche */
+.divider-line {
+    height: 1px;               /* Épaisseur de la ligne (très fine) */
+    background-color: #202020; /* Couleur blanche pour contraster avec le rose */
+    width: 80%;               /* La ligne traverse tout l'écran */
+    margin-top: -10px;          /* Espace entre le texte du titre et la ligne */
+}
+
+/* --- CONTENEUR DES ÉLÉMENTS --- */
+
+.stages-container {
+    display: flex;             /* Flexbox pour organiser les éléments en colonne */
+    flex-direction: column;    /* Aligne le bouton PDF et la carte l'un sous l'autre */
+    align-items: center;       /* Centre horizontalement le bouton et la carte */
+    padding: 40px 20px;        /* Espacement interne de la zone de contenu */
+}
+
+/* --- BOUTON : FICHE DE COMPÉTENCE --- */
+
+.btn-fiche {
+    display: inline-block;     /* Permet d'appliquer des marges et du padding */
+    background-color: #202020; /* Fond sombre (anthracite/noir) */
+    color: #ffdcee;           /* Texte rose clair pour le rappel de couleur */
+    border: 1px solid #201f1f; /* Bordure blanche fine */
+    padding: 12px 25px;        /* Taille du bouton (intérieur) */
+    margin-bottom: 40px;       /* Espace entre ce bouton et la carte Cowigo */
+    text-decoration: none;     /* Supprime le soulignement du lien */
+    font-weight: bold;         /* Texte en gras */
+    border-radius: 4px;        /* Coins légèrement arrondis */
+    transition: all 0.3s ease; /* Animation fluide pour tous les changements (couleur, mouvement) */
+}
+
+/* Effet au survol du bouton Fiche de compétence */
+.btn-fiche:hover {
+    background-color: #ffdcee;      /* Le fond devient blanc */
+    color: #272626;                 /* Le texte devient sombre */
+    transform: translateY(-5px);    /* Le bouton monte de 5 pixels (effet de saut) */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Ajoute une ombre pour donner du relief */
+}
+
+/* --- CARTE DE STAGE (COWIGO) --- */
+
+.stage-card {
+    border: 1px solid rgb(41, 40, 40);        /* Bordure blanche de la carte */
+    border-radius: 12px;            /* Coins arrondis de la carte */
+    padding: 30px;                  /* Espace entre la bordure et le texte interne */
+    max-width: 850px;               /* Largeur maximale pour que ce ne soit pas trop large */
+    width: 100%;                    /* S'adapte sur mobile */
+    background-color: rgba(255, 255, 255, 0.1); /* Fond blanc très transparent (effet verre) */
+}
+
+/* Titre de l'entreprise dans la carte */
+.stage-card h3 {
+    margin-top: 0;                  /* Supprime l'espace inutile en haut */
+    font-size: 1.8rem;              /* Taille du nom de l'entreprise */
+}
+
+/* Zone des boutons à l'intérieur de la carte */
+.stage-buttons {
+    display: flex;                  /* Aligne les boutons les uns à côté des autres */
+    flex-wrap: wrap;                /* Permet aux boutons de passer à la ligne sur mobile */
+    gap: 15px;                      /* Espace entre chaque bouton */
+    margin-top: 25px;               /* Espace entre le texte du stage et les boutons */
+}
+
+/* Style commun des boutons d'action (Carte, Rapports) */
+.btn-action {
+    background-color: #2f2e2e;      /* Fond noir */
+    color: #ffdcee;                /* Texte rose */
+    text-decoration: none;          /* Supprime le soulignement */
+    padding: 10px 20px;             /* Taille des boutons */
+    border: 1px solid #1c1b1b;        /* Bordure blanche */
+    border-radius: 6px;             /* Coins arrondis */
+    font-size: 0.85rem;             /* Taille de texte un peu plus petite */
+    font-weight: bold;              /* Texte en gras */
+    transition: all 0.3s ease;      /* Animation fluide */
+}
+
+/* Effet au survol des boutons d'action */
+.btn-action:hover {
+    background-color: #ffdcee;      /* Le fond devient blanc */
+    color: #1c1b1b;                 /* Le texte devient noir */
+    transform: scale(1.05);         /* Le bouton grossit de 5% */
+}
+
+
+/* ============================================================
+   SECTION RÉALISATIONS
+   ============================================================ */
+
+#realisations {
+    background-color: #ffffff; /* Ton fond rose */
+    padding: 60px 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* --- EN-TÊTE (Titre à gauche) --- */
+.realisations-header {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.realisations-header h2 {
+    color: #272626;
+    font-size: 2.5rem;
+    padding-left: 10%; /* Aligné sur ton formulaire */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+}
+
+.realisations-header .divider-line {
+    height: 1px;
+    background-color: #000000;
+    width: 100%;
+    margin-top: 15px;
+    opacity: 0.2;
+}
+
+/* --- GRILLE DES PROJETS --- */
+.realisations-container {
+    display: grid;
+    /* Crée 3 colonnes sur PC, s'adapte automatiquement sur mobile */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- CARTE PROJET (Look identique au formulaire) --- */
+.project-card {
+    background-color: white;
+    /* La fameuse grosse bordure extérieure */
+    border: 4px solid #272626; 
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Soulèvement prononcé */
+    box-shadow: 10px 10px 0px rgba(39, 38, 38, 1); /* Ombre solide style BD */
+}
+
+.tech-badge {
+    background-color: #ffd4ea;
+    color: #272626;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid #272626;
+}
+
+.project-card h3 {
+    margin: 15px 0 10px 0;
+    color: #272626;
+}
+
+.project-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* --- BOUTONS DANS LES CARTES --- */
+.project-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-project {
+    background-color: #272626;
+    color: #ffd4ea;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-github {
+    border: 2px solid #272626;
+    color: #272626;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-github:hover {
+    background-color: #272626;
+    color: white;
+}
+
+/* ============================================================
+   SECTION VEILLE
+   ============================================================ */
+/* Container principal */
+#veilles {
+    background-color: #ffd4ea; 
+    padding: 60px 20px;
+    color: white;
+}
+
+.veilles-container {
+    max-width: 1100px; 
+    margin: 0 auto; /* Le conteneur reste centré, mais le contenu à l'intérieur sera à gauche */
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligne tout le contenu (titre + cases) à gauche */
+}
+
+/* --- EN-TÊTE (Titre à gauche) --- */
+.veilles-header {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.veilles-header h2 {
+    color: #272626;
+    font-size: 2.5rem;
+    padding-left: 10%; /* Aligné sur ton formulaire */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+}
+
+.veilles-header .divider-line {
+    height: 1px;
+    background-color: #272626;
+    width: 100%;
+    margin-top: 15px;
+    opacity: 0.2;
+}
+
+.accordion-group {
+    width: 100%; /* Les cases prennent toute la largeur disponible du container */
+}
+
+details {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: #334e68;
+    
+    /* FIXE LA LARGEUR */
+    width: 100%; 
+    box-sizing: border-box; /* Important : inclut le padding dans la largeur */
+    overflow: hidden; /* Propreté visuelle */
+}
+
+/* On retire l'effet de survol qui faisait bouger la case si tu ne l'aimes pas */
+details:hover {
+    transform: none; 
+}
+
+summary {
+    list-style: none;
+    padding: 25px; /* On augmente le padding pour "élargir" visuellement la case */
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Le contenu s'adapte sans pousser les murs */
+.details-content {
+    padding: 0 25px 25px 68px;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #555;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   SECTION CONTACT
+   ============================================================ */
+
+/* 1. Sécurité anti-scroll horizontal (À mettre impérativement) */
+#contact {
+    background-color: #ffffff; /* Ton rose clair */
+    color: #272626;
+    padding: 60px 0;
+    width: 100%;
+    overflow-x: hidden; /* Empêche tout débordement à l'horizontale */
+    box-sizing: border-box;
+}
+
+/* 2. En-tête avec alignement flexible */
+.contact-header {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.contact-header h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    /* On remplace le padding-left: 200px par une valeur plus sûre */
+    padding-left: 10%; 
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    padding-left: 10%; /* Aligné avec le titre */
+    max-width: 80%;    /* Évite que le texte ne s'étale trop sur les grands écrans */
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+/* 3. La ligne fine (Corrigée pour ne pas créer de scroll) */
+.contact-header .divider-line {
+    height: 1px;
+    background-color: rgba(39, 38, 38, 0.2); /* Gris sombre léger pour l'élégance */
+    width: 100%;
+    margin-top: 20px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: rgba(255, 255, 255, 0.4); /* Fond légèrement plus clair */
+    padding: 45px;
+    border-radius: 20px;
+    
+    /* --- LA GROSSE BORDURE EXTÉRIEURE --- */
+    border: 1px solid #272626; 
+    box-shadow: 10px 10px 0px rgba(39, 38, 38, 0.1); /* Petit effet d'ombre décalée pour le style */
+}
+
+/* --- LES CHAMPS À L'INTÉRIEUR --- */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 18px;
+    /* Bordure beaucoup plus fine et discrète à l'intérieur */
+    border: 1px solid rgba(39, 38, 38, 0.2); 
+    border-radius: 10px;
+    background: white; 
+    color: #272626;
+    font-size: 1.1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Effet au clic : la bordure interne s'assombrit légèrement sans devenir trop épaisse */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #272626; /* Devient noir mais reste fin (1px) */
+    background-color: #ffffff;
+}
+
+/* Le bouton d'envoi */
+.btn-send {
+    width: 100%;
+    background-color: #272626;
+    color: #ffd4ea;
+    padding: 20px;
+    border: none; /* Pas de bordure sur le bouton pour qu'il tranche */
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-send:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
