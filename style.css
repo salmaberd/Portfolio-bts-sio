@@ -887,18 +887,22 @@ h2 {
    ============================================================ */
 /* --- STYLE DE L'IMAGE DANS LA CARTE --- */
 .project-image {
-    width: 100%;
-    height: 180px; /* Hauteur fixe pour l'harmonie des cartes */
+    width: calc(100% + 50px); /* Garde ton calcul */
+    margin: -25px -25px 20px -25px;
+    height: 180px; 
     overflow: hidden;
-    border-bottom: 4px solid #272626; /* Sépare l'image du texte avec la même ligne épaisse */
-    margin: -25px -25px 20px -25px; /* Annule le padding de la carte parente pour coller aux bords */
-    width: calc(100% + 50px); /* Recouvre toute la largeur malgré le padding */
+    border-bottom: 4px solid #272626;
+    border-top-left-radius: 10px; /* Ajoute ça pour épouser l'arrondi de la carte */
+    border-top-right-radius: 10px;
+    position: relative; /* Sécurité */
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* L'image remplit le cadre sans être déformée */
+    display: block; /* Supprime l'espace vide sous l'image */
+    object-fit: cover; /* Important : rogne l'image pour remplir le cadre sans déformer */
+    object-position: center; /* Centre la montre ou l'interface */
     transition: transform 0.5s ease;
 }
 
