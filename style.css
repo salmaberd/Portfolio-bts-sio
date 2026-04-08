@@ -613,7 +613,7 @@ h2 {
 
 /* Style de chaque carte individuelle */
 .skill-card {
-    background-color: #ffc3e4;   /* carte rose */
+    background-color: #fcbee0;   /* carte rose */
     border-radius: 15px;         /* Coins arrondis */
     padding: 30px 20px;          /* Espace interne */
     text-align: center;          /* Centre l'icône et le texte */
