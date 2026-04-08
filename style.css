@@ -444,10 +444,10 @@ h2 {
 
 /* Ligne fine sous le titre qui traverse tout l'écran */
 .divider-line {
-    height: 1px;               /* Épaisseur de la ligne */
-    background-color: #f9a8d4; /* Couleur rose clair */
-    width: 100%;               /* S'étend sur toute la largeur de la page */
-    margin-top: 10px;          /* Petit espace sous le texte du titre */
+    height: 1px;               /* Épaisseur de la ligne (très fine) */
+    background-color: #202020; /* Couleur blanche pour contraster avec le rose */
+    width: 80%;               /* La ligne traverse tout l'écran */
+    margin-top: -10px;          /* Espace entre le texte du titre et la ligne */
 }
 
 /* --- CONTENEUR DES CARTES (TIMELINE) --- */
@@ -598,7 +598,7 @@ h2 {
     text-align: left;
     font-size: 1.8rem;
     margin-bottom: 40px;
-    color: #f9a8d4;
+    color: #141314 !important;
 }
 
 /* Grille des compétences */
@@ -613,7 +613,7 @@ h2 {
 
 /* Style de chaque carte individuelle */
 .skill-card {
-    background-color: #f9a8d4;   /* carte rose */
+    background-color: #ffc3e4;   /* carte rose */
     border-radius: 15px;         /* Coins arrondis */
     padding: 30px 20px;          /* Espace interne */
     text-align: center;          /* Centre l'icône et le texte */
@@ -625,7 +625,7 @@ h2 {
 .skill-card:hover {
     transform: translateY(-10px); /* La carte remonte */
     box-shadow: 0 10px 20px rgba(249, 168, 212, 0.3); /* Ombre rosée */
-    background-color: #fc8eca;   /* Change vers ton rose foncé */
+    background-color: #ffacda;   /* Change vers ton rose foncé */
 }
 
 /* Taille des icônes de langages */
@@ -1069,11 +1069,10 @@ h2 {
 }
 
 .veilles-header .divider-line {
-    height: 1px;
-    background-color: #272626;
-    width: 100%;
-    margin-top: 15px;
-    opacity: 0.2;
+    height: 1px;               /* Épaisseur de la ligne (très fine) */
+    background-color: #202020; /* Couleur blanche pour contraster avec le rose */
+    width: 80%;               /* La ligne traverse tout l'écran */
+    margin-top: -10px;          /* Espace entre le texte du titre et la ligne */
 }
 
 .accordion-group {
